@@ -1,9 +1,7 @@
 import "./App.css";
 import Practicestate from "./components/Practicestate";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Practiceuseeffect from "./components/Practiceuseeffect";
 import About from "./components/About";
-import { useAccordionButton } from "react-bootstrap";
 import { useState } from "react";
 import Nav from "./components/Nav";
 import Alert from "./components/Alert";
@@ -49,9 +47,6 @@ function App() {
         toggleMode={toggleMode}
       />
       <Alert alert={alert} />
-
-      {/* <Practiceuseeffect /> */}
-
       <Routes>
         <Route
           exact

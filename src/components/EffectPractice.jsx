@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Practiceuseeffect = () => {
+const EffectPractice = () => {
   const [num, setNum] = useState(0);
   useEffect(() => {
     console.log("i am clicked");
@@ -20,4 +20,4 @@ const Practiceuseeffect = () => {
   );
 };
 
-export default Practiceuseeffect;
+export default EffectPractice;
