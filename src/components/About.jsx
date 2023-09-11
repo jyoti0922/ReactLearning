@@ -7,7 +7,7 @@ const About = () => {
     backgroundColor: "white",
   });
   const toggleStyle = () => {
-    if (myStyle.color ===  "black") {
+    if (myStyle.color === "black") {
       setMyStyle({
         color: "white",
         backgroundColor: "black",
@@ -52,9 +52,6 @@ const About = () => {
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-        <button onClick={toggleStyle} className="btn btn-primary my-3">
-          {btntext}
-        </button>
       </div>
     </>
   );
