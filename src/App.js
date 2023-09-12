@@ -6,6 +6,7 @@ import { useState } from "react";
 import Nav from "./components/Nav";
 import Alert from "./components/Alert";
 import { Route, Routes } from "react-router-dom";
+import ContactUs from "./components/ContactUs";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -45,6 +46,7 @@ function App() {
       <Nav
         title="TextUtils"
         aboutText="About TextUtils"
+        contactText="Contact TextUtils"
         mode={mode}
         toggleMode={toggleMode}
       />
@@ -62,6 +64,7 @@ function App() {
           }
         />
         <Route exact path="/about" element={<About mode={mode} />} />
+        <Route exact path="/contact us" element={<ContactUs mode={mode} />} />
       </Routes>
     </>
   );

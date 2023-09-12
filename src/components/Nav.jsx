@@ -24,13 +24,18 @@ const Nav = (props) => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <Link to="/" className="nav-item text-decoration-none">
-                <a className="nav-link active" aria-current="page" href="/">
+                <a className="nav-link" aria-current="page" href="/">
                   Home
                 </a>
               </Link>
               <Link to="/about" className="nav-item text-decoration-none">
                 <a className="nav-link" href="/">
                   {props.aboutText}
+                </a>
+              </Link>
+              <Link to="/contact us" className="nav-item text-decoration-none">
+                <a className="nav-link" href="/">
+                  {props.contactText}
                 </a>
               </Link>
             </ul>

@@ -2,3 +2,10 @@
   color: white !important;
   background-color: #042743 !important;
 }
+.accordion-button::after {
+  filter: invert(1);
+}
+.error_set {
+  top: 10px;
+  right: 12px;
+}

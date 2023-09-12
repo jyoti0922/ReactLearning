@@ -17,11 +17,11 @@ const Practicestate = (props) => {
     props.showAlert("Text cleared!", "success");
   };
   const handleCopyClick = () => {
-    var text = document.getElementById("myBox");
-    text.select();
-    document.getSelection().removeAllRanges();
+    // var text = document.getElementById("myBox");
+    // text.select();
+    // document.getSelection().removeAllRanges();
     navigator.clipboard.writeText(text.value);
-    props.showAlert("copy to clipboard!", "success");
+    props.showAlert("Copy to clipboard!", "success");
   };
   const handleExtraSpaces = () => {
     let newText = text.split(/[ ]+/);
@@ -95,7 +95,7 @@ const Practicestate = (props) => {
           <h1>Your text summary</h1>
           <p>
             {
-              text.split(" ").filter((element) => {
+              text.split(/\s+/).filter((element) => {
                 return element.length !== 0;
               }).length
             }{" "}
