@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const ContactUs = (props) => {
   let myStyle = {
     color: props.mode === "dark" ? "white" : "#042743",
-    backgroundColor: props.mode === "dark" ? "#042743" : "white",
+    backgroundColor: props.mode === "dark" ? "#13466e" : "white",
     borderColor: props.mode === "dark" ? "042743" : "white",
     borderWidth: props.mode === "dark" ? "2px" : "2px",
   };
