@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactUs = (props) => {
   let myStyle = {
@@ -37,11 +39,13 @@ const ContactUs = (props) => {
         dataValue.password
       );
       setdataValue(myData);
+      toast("successfull");
       //   seterror(false);
     }
   };
   return (
     <>
+      <ToastContainer />
       <div
         className="container"
         style={{
