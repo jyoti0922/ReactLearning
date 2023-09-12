@@ -2,13 +2,11 @@ import React, { useState } from "react";
 
 const Practicestate = (props) => {
   const handleUpClick = () => {
-    // console.log("upercase was here" + text);
     let newText = text.toUpperCase();
     setText(newText);
     props.showAlert("converted to uppercase!", "success");
   };
   const handleLoClick = () => {
-    // console.log("upercase was here" + text);
     let newText = text.toLowerCase();
     setText(newText);
     props.showAlert("converted to lowercase!", "success");
@@ -21,6 +19,7 @@ const Practicestate = (props) => {
   const handleCopyClick = () => {
     var text = document.getElementById("myBox");
     text.select();
+    document.getSelection().removeAllRanges();
     navigator.clipboard.writeText(text.value);
     props.showAlert("copy to clipboard!", "success");
   };
@@ -30,7 +29,6 @@ const Practicestate = (props) => {
     props.showAlert("Extra spaces remove!", "success");
   };
   const handleOnChange = (event) => {
-    // console.log("on change here");
     setText(event.target.value);
   };
   const [text, setText] = useState("");
@@ -52,27 +50,41 @@ const Practicestate = (props) => {
             id="myBox"
             rows="10"
             style={{
-              backgroundColor: props.mode === "light" ? "white" : "grey",
+              backgroundColor: props.mode === "light" ? "white" : "#13466e",
               color: props.mode === "light" ? "#042743" : "white",
             }}
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleUpClick}
+        >
           Convert to uppercase
         </button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleLoClick}
+        >
           Convert to Lowercase
         </button>
         <button
+          disabled={text.length === 0}
           className="btn btn-primary mx-1 my-1"
           onClick={handleClearClick}
         >
           Clear Text
         </button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleCopyClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleCopyClick}
+        >
           Copy Text
         </button>
         <button
+          disabled={text.length === 0}
           className="btn btn-primary mx-1 my-1"
           onClick={handleExtraSpaces}
         >
@@ -89,13 +101,15 @@ const Practicestate = (props) => {
             }{" "}
             words and {text.length} characters
           </p>
-          <p>{0.008 * text.split(" ").length} minutes read</p>
-          <h2>Enter your text to Preview</h2>
           <p>
-            {text.length > 0
-              ? text
-              : "Enter something in the textbox to preview is here"}
+            {0.008 *
+              text.split(" ").filter((element) => {
+                return element.length !== 0;
+              }).length}{" "}
+            minutes read
           </p>
+          <h2>Enter your text to Preview</h2>
+          <p>{text.length > 0 ? text : "Nothing to preview"}</p>
         </div>
       </div>
     </>

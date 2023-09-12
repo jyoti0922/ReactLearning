@@ -11,13 +11,15 @@ function AlertDismissibleExample(props) {
 
   if (show) {
     return (
-      props.alert && (
-        <Alert variant="success">
-          <Alert.Heading>
-            {capitalize(props.alert.type)}:{props.alert.msg}
-          </Alert.Heading>
-        </Alert>
-      )
+      <div style={{ height: "70px" }}>
+        {props.alert && (
+          <Alert variant="success">
+            <Alert.Heading>
+              {capitalize(props.alert.type)}:{props.alert.msg}
+            </Alert.Heading>
+          </Alert>
+        )}
+      </div>
     );
   }
 }
